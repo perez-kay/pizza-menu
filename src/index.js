@@ -69,10 +69,32 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our Menu</h2>
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      <Pizza
+        name={pizzaData[0].name}
+        ingredients={pizzaData[0].ingredients}
+        photoName={pizzaData[0].photoName}
+        price={pizzaData[0].price}
+      />
+      <Pizza
+        name={pizzaData[1].name}
+        ingredients={pizzaData[1].ingredients}
+        photoName={pizzaData[1].photoName}
+        price={pizzaData[1].price}
+      />
     </main>
+  );
+}
+
+function Pizza(props) {
+  return (
+    <div className="pizza">
+      <img src={props.photoName} alt={props.name} />
+      <div>
+        <h3>{props.name}</h3>
+        <p>{props.ingredients}</p>
+        <span>{props.price}</span>
+      </div>
+    </div>
   );
 }
 
@@ -86,16 +108,6 @@ function Footer() {
     <footer className="footer">
       {isOpen ? "We're open!" : "Sorry, we're closed."}
     </footer>
-  );
-}
-
-function Pizza() {
-  return (
-    <>
-      <img src="pizzas/focaccia.jpg" alt="focaccia pizza" />
-      <h2>{pizzaData[0].name}</h2>
-      <p>Ingredients: {pizzaData[0].ingredients}</p>
-    </>
   );
 }
 
