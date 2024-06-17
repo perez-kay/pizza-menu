@@ -99,7 +99,9 @@ function Footer() {
 
   return (
     <footer className="footer">
-      {isOpen ? "We're open!" : "Sorry, we're closed."}
+      {isOpen && (
+        <p>We're open until {closeHour}:00. Come visit us or order online.</p>
+      )}
     </footer>
   );
 }
